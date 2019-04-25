@@ -30,7 +30,8 @@ mux = 5e-3;
 muy = 7.5e-3;
 Lx = 15e-3/2;
 Ly = 6e-3;
-A = 0.01;
+% A = 0.01;
+A = 0.0168;
 d0_const = 4.056;
 
 d0_field = @(x,y) A.*exp(-0.5*(x - mux).^2/Lx^2 - 0.5*(y-muy).^2/Ly^2) + d0_const;
@@ -93,18 +94,6 @@ ylines2 = [entry(4,nsegs==2);
 
 xlines = [xlines(:);xlines2(:)];
 ylines = [ylines(:);ylines2(:)];
-
-
-figure(2)
-clf
-plot(xb,yb,'k','LineWidth',1.5)
-hold on
-% plot(entry(1,:),entry(2,:))
-% plot(exit(1,:),entry(2,:))
-plot(xlines,ylines,'-o')
-hold off
-xlim([min(xb)*1.1 max(xb)*1.1])
-ylim([min(yb)*1.1 max(yb)*1.1])
 
 
 
@@ -170,6 +159,6 @@ dm = d  + d0_const*sig_m*randn(size(entry,2),1);
 y_const = (dm - d0_const)/d0_const; % measurement assuming constant d0
 
 %% save
-save('C_shape_sim_data4_60','entry','exit','nhat','nsegs','y_const','d','dm','L')
+save('C_shape_sim_data3_60','entry','exit','nhat','nsegs','y_const','d','dm','L')
 
 

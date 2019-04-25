@@ -76,6 +76,7 @@ d0_f(indices) = d0_field(X(indices),Y(indices));
 
 
 %% load measurements 
+% load('C_shape_sim_data3_60') % measurement set with higher d0 variation
 load('C_shape_sim_data4_60.mat')
 badind = isnan(d);
 y_const(badind) = [];
@@ -117,7 +118,7 @@ end
 
 %% reconstruct with variational inference
 
-
+disp('Maximising the free energy')
 [negF,wopt,Ropt,epsbf,d0bf] = ...
     var_inference_ms(Theta,sig_m,dm,entry,exit,nhat,nsegs,L,nu,d0_const,num_basis1,num_basis2,X(indices),Y(indices),xt,yt,ntrac,sig_t,true);
 m2 = size(epsbf,2);
