@@ -2,8 +2,8 @@
 This repository contains Matlab code for two example simulations of jointly reconstruction the strain-free lattice spacing and the strain within a polycrystalline material from Bragg-edge neutron transmission measurements. The examples are a companion to the paper at 
 
 The two examples discussed in the paper are included. These are;
-> 'cantilever_beam_example.m': Reconstruction of the theoretical Saint-Venant strain field for a Cantilever beam
-> 'C_shape_example.m': Reconstruction of a Finite Element Analysis (FEA) 'C' Shape sample subject to a compressive load
+- 'cantilever_beam_example.m': Reconstruction of the theoretical Saint-Venant strain field for a Cantilever beam
+- 'C_shape_example.m': Reconstruction of a Finite Element Analysis (FEA) 'C' Shape sample subject to a compressive load
 The examples can be found under the 'examples' folder.
 
 The 'C' shape example uses pregenerated measurements. New sets of measurements can be generated using 'C_shape_simulate_measurements.m'
