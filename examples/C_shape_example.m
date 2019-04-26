@@ -103,7 +103,7 @@ sig_t = 5e-6;       % traction variance
 if run_optimisation % warning this will take a while
     theta0 = [6.6359, 0.0223, 0.0044, 100, 0.0057, 0.0057]';
     func = @(theta) var_inference_ms_exp(theta,sig_m,dm,entry,exit,nhat,nsegs,L,nu,d0_const,num_basis1,num_basis2,X(indices),Y(indices),xt,yt,ntrac,sig_t,true);
-    optimSearch_options = optimset('display','iter','TolFun',1e-12,'TolX',1e-12,'MaxFunEvals',100,'PlotFcns',@optimplotfval);
+    optimSearch_options = optimset('display','iter','TolFun',1e-12,'TolX',1e-12,'MaxFunEvals',500,'PlotFcns',@optimplotfval);
     [thetaopt,Fval] = fminsearch(func,log(Theta),optimSearch_options);
 
     Theta = exp(thetaopt)
@@ -257,4 +257,6 @@ errorGP = mean(abs([Exx(indices);Exy(indices);Eyy(indices)]-[epsxx_GP(indices);e
 
 errorVI = mean(abs([Exx(indices);Exy(indices);Eyy(indices)]-[epsxx_vi(indices);epsxy_vi(indices);epsyy_vi(indices)]))/max(abs([Exx(indices);Exy(indices);Eyy(indices)]))
 
-
+%% saving results
+save('C_shape_results','X','Y','indices','xb','yb','Exx','Eyy','Exy','d0_f',...
+    'epsxx_GP','epsxy_GP','epsyy_GP','epsxx_vi','epsxy_vi','epsyy_vi','d0_vi','Theta')

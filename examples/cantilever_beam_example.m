@@ -242,6 +242,12 @@ pcolor(X,Y,d0_f);axis image;shading interp;colorbar;title('$d_0$','Interpreter',
 subplot(3,4,12)
 pcolor(X,Y,d0_vi);axis image;shading interp;colorbar;
 
+%% saving results
+% save('CB_results.mat','X','Y','epsxx','epsyy','epsxy','epsxx_pred','epsxy_pred','epsyy_pred','epsxx_vi','epsxy_vi','epsyy_vi','d0_f','d0_vi')
+
+
+
+
 
 
 
