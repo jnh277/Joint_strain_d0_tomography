@@ -1,5 +1,5 @@
 # Joint tomography of strain and the strain-free lattice spacing 
-This repository contains Matlab code for two example simulations of jointly reconstruction the strain-free lattice spacing and the strain within a polycrystalline material from Bragg-edge neutron transmission measurements. The examples are a companion to the paper at 
+This repository contains Matlab code for two example simulations of jointly reconstruction the strain-free lattice spacing and the strain within a polycrystalline material from Bragg-edge neutron transmission measurements. The examples are a companion to the paper at http://arxiv.org/abs/1905.06854
 
 The two examples discussed in the paper are included. These are;
 - 'cantilever_beam_example.m': Reconstruction of the theoretical Saint-Venant strain field for a Cantilever beam
